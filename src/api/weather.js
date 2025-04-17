@@ -1,4 +1,4 @@
-const API_KEY = "35d405cde5902a73441e4517d8afb237"; // Replace with your actual key
+const API_KEY = "OPENWEATHER_API"; // Replace with your actual key
 
 export const fetchWeather = async (city) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;

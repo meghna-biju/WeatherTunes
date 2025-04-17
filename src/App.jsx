@@ -3,6 +3,9 @@ import { fetchWeather } from "./api/weather";
 import { getSongsForWeather } from "./api/songs";
 import WeatherDisplay from "./components/WeatherDisplay";
 import SongList from "./components/SongList";
+import './App.css';
+import logo from './components/logo.jpg'
+
 
 const App = () => {
   const [city, setCity] = useState("");
@@ -14,11 +17,14 @@ const App = () => {
     const data = await fetchWeather(city);
     if (data) {
       setWeatherData(data);
-      setSongs(getSongsForWeather(data.weather[0].main));
+      const songList = await getSongsForWeather(data.weather[0].main);
+      setSongs(songList);
     }
   };
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200 p-4">
+      <img src={logo} alt="App Logo" className="logo" />
       <h1 className="text-3xl font-bold mb-4">Weather-Based Music Recommender</h1>
 
       <div className="flex space-x-2 mb-4">
