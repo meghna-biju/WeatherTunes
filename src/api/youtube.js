@@ -1,7 +1,7 @@
 // src/api/youtube.js
 import axios from 'axios';
 
-const YOUTUBE_API_KEY = "YOUTUBE_API"; // store in .env in production
+const YOUTUBE_API_KEY = "AIzaSyAWrkc4--UcSFzY3tva0YgECkDw0eCDtOs"; // store in .env in production
 
 export async function fetchYouTubeVideoId(query) {
   const res = await axios.get('https://www.googleapis.com/youtube/v3/search', {
